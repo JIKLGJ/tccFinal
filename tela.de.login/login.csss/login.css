@@ -253,6 +253,21 @@ font-size: 12px;
 
 }
 
+#Cadastro {
+
+  width: 10%; /* Define a largura como 100%*/
+  height: 40px;
+  padding: 10px; /* Adiciona preenchimento */
+  background-color: #1148a8 ; /* Define a cor de fundo */
+  color: #fdfdfd; /* Define a cor do texto */
+  border: none; /* Remove a borda */
+  border-radius: 90px; /* Adiciona bordas arredondadas */
+  cursor: pointer; /* Define o cursor como ponteiro */
+   margin-right: 40px;
+   margin-left: -75px;
+  margin-top: 10px;
+}
+
       @media (max-width:375px){
 
           .logo{
@@ -493,22 +508,30 @@ font-size: 12px;
 
     #Esqueceu{
         margin-left: 126px;
+      
     }
     #Suporte{
       margin-left: 162px;
       
     }
     #Cadastro{
-      margin-left: 160px;
+    
+    width: 110px;
+    margin-left: -8px;
+    margin-top: -6px;
+    
       
     }
     .botao{
       margin-bottom: 15px;
     }
+
     .cadastro{
-      margin-top: 20px;
-      margin-left: 10px;
+      margin-top: 10px;
+      margin-right: 160px;
     }
+    
+
   }
 
 
