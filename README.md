@@ -63,5 +63,5 @@ Essa organização pode ser melhorada para facilitar a manutenção e escalabili
 
 
 ### Clique aqui para acessar nosso projeto
-[![meu projeto](https://github.com/user-attachments/assets/0cb65ada-986c-46a4-a336-20bf7201d957/)](https://melancia12345.github.io/votacao/) 
+[![meu projeto](https://github.com/user-attachments/assets/0cb65ada-986c-46a4-a336-20bf7201d957/)]([https://melancia12345.github.io/votacao/](https://jiklgj.github.io/tccFinal/)) 
 
