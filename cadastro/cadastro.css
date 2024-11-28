@@ -293,10 +293,24 @@ cursor: pointer;
         }
         
         #modal {
-            width: 300px;
-            height: 400px;
-    
             margin: 0px;
+            width: 240px;
+            height: 500px;
+            
+            margin-left: 30px;
+            margin-top: 70px;
         }
+
+        #modal2{
+            margin: 0px;
+            width: 240px;
+            height: 400px;
+            margin-left: 30px;
+            margin-top: 70px;
+            
+        
+        }
+
+        
 
     }
