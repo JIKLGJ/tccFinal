@@ -32,8 +32,20 @@ Concluímos que a implementação de tecnologias digitais no ambiente escolar po
 
         
 <h1 > 📁 estruturas de pasta </h1>
-As pastas do projeto estão organizadas de forma que todos os arquivos HTML estão dentro de uma pasta chamada html, os arquivos JavaScript estão na pasta js, e os arquivos CSS estão na pasta css.
-Essa organização pode ser melhorada para facilitar a manutenção e escalabilidade, separando os arquivos não apenas por tipo, e uma pasta separada só para imagens 
+
+projetotcc2024
+
+├── suporte.juan
+│   ├── suporte.css
+│   └── suporte.js
+├── tela.de.login
+│   ├── login.css
+│   ├── login.jss
+│   └── urna
+│       ├── clube
+│       ├── eletiva
+│       ├── gremio
+│       └── tutoria
 
 
 <h1 > :computer: Autores do projeto  </h1>
