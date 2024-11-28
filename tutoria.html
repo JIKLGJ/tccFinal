@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./urna/tutoria/tutoria.css">
+    <title>Tutoria</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Tutoria</h2>
+            <img class="logo" src="./images/logo.png" alt="Tutoria">
+            <div class="formulario">
+
+            
+                <input  type="text" id="nome"  placeholder="Digite seu nome completo"  required  maxlength="35" >
+              
+              
+
+                <select id="series"  class="series"  >
+                    <option value="3 A">3 A</option>
+                    <option value="3 B">3 B</option>
+    
+                    <option  value="3 C" >3 C</option >
+
+                        <option value="2 A">2 A</option>
+                    <option value="2 B">2 B</option>
+    
+                    <option  value="2 C" >2 C</option >
+                        <option value="1 A">1 A</option>
+                    <option value="1 B">1 B</option>
+    
+                    <option  value="1 C" selected="">1 C</option >
+                
+                </select>
+
+                <select id="escolha"  class="escolha"  >
+                    <option value="tutor-Leleco">tutor-Leleco</option>
+                    <option value="tutor-Luiz">tutor-Luiz</option>
+    
+                    <option  value="tutor-João" selected="">tutor-João</option >
+                
+                </select>
+            
+               
+                   
+                 <button id="botao" >Enviar escolha</button> 
+                 <ul>   
+                   <li><a href="./tela de bem vindo.html">Voltar</a>
+                   
+                   </li>
+                   <li>
+                    <a href="./sup.html">Suporte</a>
+                   </li> 
+                 </ul>
+            </div>
+        </div>
+    </div>
+   
+   
+    <dialog class="modal" id="modal">
+       
+       
+            <div class="metade" id="cima">
+                <div class="circulo">
+                 <img class="x" src="https://freepngtransparent.com/wp-content/uploads/2023/03/X-Png-109.png" alt="">
+                  
+                </div>
+            </div>
+              
+              <div class="metade" id="baixo">
+                <p id="ops">Preencha o campo de nome corretamente! </p>
+               
+              
+          
+          <button id="okButton" class="okButton2"> OK </button>
+      
+        </div>
+    
+    </dialog>
+    <dialog class="modal2" id="modal2">
+        <div class="metade" id="cima">
+            <div class="circulo2">
+             <img class="x" src="./images/check-png.webp" alt="">
+              
+            </div>
+        </div>
+          
+          <div class="metade" id="baixo">
+          
+        
+        <p id="ops"> Escolha confirmada!</p>
+        
+        <button id="okButton2" class="okButton"> OK </button>
+    
+      </div>
+    
+    </dialog>
+    </body>
+    <script type="module" src="./urna/tutoria/tutoria.js"></script>
+    </html>

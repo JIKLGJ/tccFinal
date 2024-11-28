@@ -1,0 +1,299 @@
+/*ESTILO GERAL*/
+/* Reseta margens e preenchimentos para todos os elementos e define box-sizing como border-box para todos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Define o box-sizing como border-box */
+}
+
+/* Define a cor de fundo e a altura do corpo da página */
+body {
+  background-color: #202349; 
+  height: 100vh; /*Altura da página igual à altura da visualização*/
+}
+
+/* Define a largura máxima e centraliza o conteúdo da interface */
+.interface {
+  max-width: 1280px; /* Largura máxima para a interface */
+  margin: 0 auto; 
+}
+
+/* Define o comportamento de exibição como flexível */
+.flex {
+  display: flex;
+  
+}
+
+
+.SAIR a{
+
+  margin-left: 375px;
+  color: #1dd1f1; /* Cor do texto dos links */
+  text-decoration: none; /* Remove o sublinhado padrão dos links */
+  display: inline-block; /* Permite aplicar padding e margin */
+  transition: .2s; /* Transição suave para propriedades alteradas */
+  
+
+}
+ 
+.SAIR a:hover{
+
+  transform: scale(1.05); /* Aumenta o tamanho do link levemente */
+  color: #ffffff;
+}
+
+/* Estilo para botões na classe .btn-contato dentro de main */
+main .btn-contato button {
+  padding: 10px 40px; /* Espaçamento interno do botão */
+  font-size: 18px; /* Tamanho da fonte do texto no botão */
+  font-weight: 600; /* Peso da fonte do texto no botão */
+  background-color: #1dd1f1; 
+  border: 0; 
+  border-radius: 30px; /* Arredondamento das bordas do botão */
+  cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+  transition: .2s; /* Transição suave para propriedades alteradas */
+}
+
+/* Estilo para títulos h2 com a classe .titulo */
+h2.titulo {
+  color: #ffffff; /* Cor do texto do título */
+  font-size: 34px; /* Tamanho da fonte do título */
+  text-align: center; /* Alinhamento centralizado do texto */
+}
+
+h2.titulo span {
+  color: #1dd1f1; 
+}
+
+/* Estilo para o cabeçalho do site */
+header {
+  padding: 40px 4%; /* Espaçamento interno ao redor do cabeçalho */
+}
+
+/* Estilo para o conteúdo do cabeçalho */
+header > .interface {
+  display: flex; /* Comportamento flexível para a interface do cabeçalho */
+  align-items: center; 
+  justify-content: space-between; /* Espaçamento uniforme entre os itens */
+}
+
+/* Estilo para links dentro do cabeçalho */
+header a {
+  color: #1dd1f1; /* Cor do texto dos links */
+  text-decoration: none; /* Remove o sublinhado padrão dos links */
+  display: inline-block; /* Permite aplicar padding e margin */
+  transition: .2s; /* Transição suave para propriedades alteradas */
+}
+
+/* Estilo para links no cabeçalho ao passar o mouse sobre eles */
+header a:hover {
+  color: #ffffff; /* Cor do texto do link ao passar o mouse */
+  transform: scale(1.05); /* Aumenta o tamanho do link levemente */
+}
+
+/* Estilo para listas de navegação dentro do cabeçalho */
+header nav ul {
+  list-style-type: none; /* Remove os marcadores das listas */
+}
+
+/* Estilo para itens da lista dentro da navegação do cabeçalho */
+header nav ul li {
+  display: inline-block; /* Exibe itens da lista horizontalmente */
+  padding: 0 30px; /* Espaçamento horizontal ao redor dos itens */
+  text-align: center; /* Alinhamento centralizado do texto nos itens da lista */
+  font-size: 20px;
+}
+
+/* Estilo para botões dentro da classe .btn-contato ao passar o mouse sobre eles */
+.btn-contato button:hover {
+  box-shadow: 0px 0px 8px #1daaf1; /* Adiciona uma sombra ao redor do botão */
+  transform: scale(1.05); /* Aumenta o tamanho do botão levemente */
+}
+
+/*seção topo-do-site*/
+section.topo-do-site {
+  padding: 40px 4%; /* Espaçamento interno ao redor da seção */
+}
+
+/* Estilo para o conteúdo flexível dentro da seção topo-do-site */
+section.topo-do-site .flex {
+  align-items: center; /* Alinhamento vertical dos itens */
+  justify-content: center; /* Alinhamento horizontal dos itens */
+  gap: 90px; /* Espaçamento entre os itens */
+}
+
+/* Estilo para o título h1 */
+.topo-do-site h1 {
+  color: #ffffff; /* Cor do texto do título */
+  font-size: 34px; /* Tamanho da fonte do título */
+  line-height: 40px; /* Altura da linha do título */
+}
+
+
+.topo-do-site .txt-topo-site p {
+  color: #ffffff; /* Cor do texto dos parágrafos */
+  margin: 40px 0px; /* Margem superior e inferior dos parágrafos */
+  font-size: 20px;
+}
+
+/* Estilo para imagens dentro da seção topo-do-site */
+.topo-do-site .img-topo-site img {
+  position: relative; /* Permite o posicionamento relativo para animação */
+  animation: flutuar 2s ease-in-out infinite alternate; /* Animação de flutuação */
+  border-radius: 15px; /* Arredondamento das bordas da imagem */
+}
+
+/*animação de flutuação*/
+@keyframes flutuar {
+  0% {
+      top: 0; /* Posição inicial da animação */
+  }
+
+  100% {
+      top: 30px; /* Posição final da animação */
+  }
+}
+
+/* Estilo para a seção especialidades */
+section.especialidades {
+  padding: 60px 4%; /* Espaçamento interno ao redor da seção */
+}
+
+
+section.especialidades .flex {
+  gap: 60px; /* Espaçamento entre os itens */
+}
+
+/* Estilo para caixas de especialidades */
+.especialidades .especialidades-box {
+  color: #ffffff; /* Cor do texto dentro da caixa */
+  padding: 40px; /* Espaçamento interno da caixa */
+  border-radius: 20px; /* Arredondamento das bordas da caixa */
+  margin-top: 45px; /* Margem superior da caixa */
+  transition: .2s; /* Transição suave para propriedades alteradas */
+  margin-left: 80px; /* Margem esquerda da caixa */
+}
+
+/* Estilo para caixas de especialidades ao passar o mouse sobre elas */
+.especialidades .especialidades-box:hover {
+  transform: scale(1.05); /* Aumenta o tamanho da caixa levemente */
+  box-shadow: 0 0 8px #ffffff78; /* Adiciona uma sombra ao redor da caixa */
+}
+
+/* Estilo para ícones dentro das caixas de especialidades */
+.especialidades .especialidades-box i {
+  font-size: 70px; /* Tamanho da fonte dos ícones */
+  color: #1daaf1; /* Cor dos ícones */
+}
+
+/* Estilo para o menu desktop */
+.menu-desktop {
+  margin: 20px 296px 60px; /* Margem superior, esquerda e inferior do menu */
+}
+
+/* Estilo para imagens */
+.img {
+  height: 170px; /* Altura das imagens */
+  width: 170px; /* Largura das imagens */
+  object-fit: cover; /* Ajusta a imagem para cobrir o espaço da caixa */
+}
+
+
+
+/*responsividadee*/
+
+@media (min-width:340px) and (max-width:500px)  { 
+ 
+  .flex{
+   flex-direction: column-reverse;
+  
+   
+  }
+  
+   /*imagem vote*/ 
+   .topo-do-site .img-topo-site img{
+     width: 190px;
+    margin-right: -1
+ 
+ 
+   
+   }
+   /*seja bem vindo ao site...*/
+   #h1-bemvindo{
+ font-size: 23px;
+ 
+   }
+   
+   p{
+     font-size: 20px;
+     margin-left: 30px;
+     
+   }
+    /*nomes das redes sociais*/
+   .especialidades-box{
+    margin-right: 10px;
+    font-size: 15px;
+    
+    
+   
+   }
+ 
+   /*logo da escola*/
+ 
+  .img{
+   margin-left: 30px; 
+   max-width: 170px;
+  
+   }
+ 
+ .menu-desktop{
+   
+   margin-left: 100px;
+   margin: 0%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap:  60px;   
+   
+  }
+  ul{
+   display: flex;
+   gap: 25px;
+   width: 90%;
+   font-size: 16px;
+   justify-content: space-around;
+ 
+  
+ 
+  }
+  .interface{
+   display: flex;
+   flex-direction: column;
+  }
+  
+  header{
+   display: flex;
+   flex-direction: column;
+  }
+  
+  /*clube tutoria gremio*/
+ 
+  header a{
+ font-size: 15px;
+ margin: 45px -100px 30px 30px;
+ margin-left: -110px;
+  }
+ 
+ .btn-contato{
+ margin-left: 80px;
+ }
+ 
+ .SAIR a{
+    margin-left: 160px;
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+ }
+
+ }
+ @media(orientation:landscape){
+ 
+  }

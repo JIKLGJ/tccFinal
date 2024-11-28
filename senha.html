@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">    
+    <link rel="stylesheet" href="./senha/sen.css">
+    <title>Redefinir senha</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="card">
+            <h2>Reescreva sua senha</h2>
+
+            <img class="logo" src="./images/logo.png" alt="Tutoria">
+            
+            <div class="formulario">
+                <div class="RA">
+                    <input type="text" id="number1" placeholder="Digite o RA apenas números" maxlength="12">
+                    <select id="digito" class="digito">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        
+                        <option value="x" selected="">X</option>
+                    </select>
+                </div>
+
+                <div class="senha">
+                    <input type="password" id="senha" name="senha" placeholder="Digite uma nova senha:"> 
+                    <i class="bi bi-eye-fill" id="bnt-senha" onclick="mostrarSenha()"></i>
+                </div>
+
+                <dialog class="modal" id="modal">
+                    <div class="metade" id="cima">
+                        <div class="circulo">
+                            <img class="x" src="https://freepngtransparent.com/wp-content/uploads/2023/03/X-Png-109.png" alt="">
+                        </div>
+                    </div>
+                    <div class="metade" id="baixo">
+                        <p id="ops">Preencha todos os campos corretamente.</p>
+                        <p id="mensagem">Digite uma senha de no mínimo 6 dígitos!</p>
+                        <button id="okButton" class="okButton"> OK </button>
+                    </div>
+                </dialog>
+
+                <dialog class="modal2" id="modal2">
+                    <div class="metade" id="cima">
+                        <div class="circulo2">
+                            <img class="x" src="./images/check-png.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="metade" id="baixo">
+                        <p id="ops">Senha alterada com sucesso!</p>
+                        <button id="okButton2" class="okButton"> OK </button>
+                    </div>
+                </dialog>
+                
+                <button id="botao">Mudar senha</button>  
+                
+                <ul>   
+                    <li><a href="./index.html">Voltar</a></li>
+                    <li><a href="./suporte-login/suporte.html">Suporte</a></li> 
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./senha/sn.js"></script>
+</body>
+</html>

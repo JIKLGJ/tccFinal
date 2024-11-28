@@ -1,0 +1,517 @@
+
+body{ 
+    
+  background: linear-gradient(90deg, rgba(15,12,41,1) 0%, rgba(48,43,99,1) 35%, rgba(36,36,62,1) 100%);
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  box-sizing: border-box;
+  padding: 0px;
+  
+  }
+  a {
+      font-size:10px;
+      color: #ffffff; 
+      font-weight: bold; 
+      font-family: Arial, sans-serif; /* define a fonte */
+      margin-left:255px; 
+  }
+  #Esqueceu{
+          font-size:12px; 
+          color: #ffffff;     
+          margin-top: auto;
+          font-weight: bold; 
+          font-family: Arial, sans-serif; /* define a fonte */
+          margin-left:220px; 
+      }
+
+  .botao  {
+          
+              width: 10%; /* Define a largura como 100%*/
+              height: 40px;
+              padding: 10px; /* Adiciona preenchimento */
+              background-color: #1148a8 ; /* Define a cor de fundo */
+              color: #fdfdfd; /* Define a cor do texto */
+              border: none; /* Remove a borda */
+              border-radius: 90px; /* Adiciona bordas arredondadas */
+              cursor: pointer; /* Define o cursor como ponteiro */
+               margin-right: 80%;
+               margin-left:180px;
+              margin-top: -10px;
+          }
+     
+      
+          
+          .RA input {
+      
+              
+              width: 15%; /* Define a largura do campo de entrada */
+              padding: 15px; /* Adiciona preenchimento interno */
+              margin-bottom: 20px; /* Adiciona margem inferior */
+              border: 2px solid #1148a8 ; /* Adiciona uma borda sólida */
+              border-radius: 5px; /* Adiciona bordas arredondadas */
+              box-sizing: border-box; /* Inclui o preenchimento e a borda na largura total */
+              transition: 0.3s; /* Adiciona uma transição suave */
+              margin-top: 35px; /* Adiciona margem superior */
+              border-radius: 15px;
+              margin-left: 7%;
+          
+          
+          }
+          
+          
+.cadastro{
+color: #1148a8;
+margin-left: 350px;
+font-size: 12px;
+}
+          
+  
+          
+          .senha input {
+      
+          
+          
+              width: 15%; /* Define a largura do campo de entrada */
+              padding: 15px; /* Adiciona preenchimento interno */
+              margin-bottom: 20px; /* Adiciona margem inferior */
+              border: 2px solid #1148a8 ; /* Adiciona uma borda sólida */
+              border-radius: 5px; /* Adiciona bordas arredondadas */
+              box-sizing: border-box; /* Inclui o preenchimento e a borda na largura total */
+          
+              margin-top: auto; /* Adiciona margem superior */
+              border-radius: 15px;
+              margin-left: 7%;
+          
+  }
+
+  
+  #digito {
+  background-color: #fdfdfd;
+  color: #8a66dd;
+  width: 50px;
+  height: 49px;
+  border: 2px solid #1148a8 ; /* Adiciona uma borda sólida */
+  border-radius: 15px;
+  transition: 0.3s; /* Adiciona uma transição suave */
+  cursor: pointer; /* Define o cursor como ponteiro */
+}
+
+  i{
+      color: black;
+      position: relative;
+      right: 40px;
+      opacity: 0.3;
+      cursor: pointer; /* Define o cursor como ponteiro */
+  }
+  
+      ::placeholder {
+          color:#8a66dd; /* Mudar para a cor desejada */
+      }
+  
+  
+  .texto{ 
+      margin-top: -17px;
+      margin-left: 160px; 
+      
+      font-size: 60px;
+      color: antiquewhite;
+  }
+  
+  h1{font-size: 50px;
+
+      color: #adadff; 
+
+      color: antiquewhite; 
+
+  margin-left: 20px;}
+  
+  .logo{
+      width: 20%;
+      height: auto;
+  margin-top:30px;
+  margin-left: 5%;
+
+  }
+  .bandeira{
+      
+      box-shadow: 2px 2px 200px rgb(2, 0, 3);        
+      width: 1250PX;
+      margin-left:590px;
+      border-radius: 45px;
+      margin-top: -650px;
+      }
+      .Esqueceu{
+     margin-left: 225px;
+      }
+  
+      
+      input[type=number]::-webkit-inner-spin-button { 
+          -webkit-appearance: none;
+          
+      }
+      input[type=number] { 
+      -moz-appearance: textfield;
+      appearance: textfield;
+      
+      }
+      
+      .modal {
+            border-radius: 20px;
+         border: solid 2px #dbd6d6;
+      }
+      
+        .metade{
+          width: 500px;
+          height: 270px;
+          
+        
+          border-radius:  1px ;
+        }
+        .circulo{
+          
+          width: 100px;
+          height: 100px;
+          border: solid 10px #D82A2A;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          margin-top: -70px;
+          align-items: center;
+        }
+        
+        #cima{
+         
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 10px;
+        }
+        .x{
+          
+          height: 60px;
+
+        }
+        #baixo{
+
+          
+          height:270px;        
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: -100px;
+          flex-direction: column;
+        }
+        
+        #ops{
+          
+          color: #353030;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 35px;
+          text-align: center;
+        
+        }
+        #mensagem{
+            color: #353030;
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: 200;
+          font-size:20px;
+          align-items: center;
+          margin-top: 20px;
+        }
+        .okButton{
+
+          background-color: #1148a8   ;
+          color: #FFFFFF;
+          width: 100px;
+          height: 43px;
+          border:solid 1px rgb(17, 16, 16); 
+          border-radius: 50px ;
+          cursor: pointer;
+         transition-duration: 0.4s; 
+          transition-duration: 0.4s;
+          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+        .okButton:hover{
+          width: 100px;
+          height: 43px;
+          box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        } 
+
+ .links button {
+  width: 10%; /* Define a largura como 100%*/
+  height: 40px;
+  padding: 10px; /* Adiciona preenchimento */
+  background-color: #1148a8 ; /* Define a cor de fundo */
+  color: #fdfdfd; /* Define a cor do texto */
+  border: none; /* Remove a borda */
+  border-radius: 90px; /* Adiciona bordas arredondadas */
+  cursor: pointer; /* Define o cursor como ponteiro */
+   margin-right: 80%;
+   margin-left:-75px;
+  margin-top: 8px;
+
+}
+
+      @media (max-width:375px){
+
+          .logo{
+
+        width: 80%;      
+          }
+          .foto{
+
+              width: 20px;
+          }
+          
+      }
+      
+  
+      @media  (min-width: 680px) and (max-width: 800px){
+
+        .logo{
+          width: 45%;
+          margin-top:0 auto;
+          margin-left: 25%;
+
+          
+          }
+          .foto{
+          display:none;
+              
+              }
+              .botao  {
+          
+                  width: 22%; /* Define a largura como 100%*/
+                  margin-left: 37%;
+                  
+              }
+              a {
+                  font-size:10px;
+                  color: #f3f8f8; 
+                 font-size: center;
+                 margin-left: 42%;
+              }
+              h1{
+              font-size: 45px;
+              color: antiquewhite;
+              text-align: 120px;
+              display: block;
+              margin-left: 21%;
+              }
+
+              .texto{ 
+                  
+                 display: flex;
+                  font-size: 35px;
+                  color: antiquewhite;
+                  margin-left: 37%;
+                  
+
+
+      }
+      
+  body{
+      justify-content: center;
+
+  }
+  .senha input {
+      
+  border-top: center; 
+  width: 20px; 
+  margin-left: 35%; 
+  width: 24%; 
+  }
+  #digito {
+
+      margin-left: 0%;  
+  }
+  .RA input {
+
+      margin-left: 35%;
+      width: 17%;
+     
+
+  }
+
+}
+ @media (min-width:340px) and (max-width:500px)  {    
+  
+  
+
+          .logo{
+            width: 50%;
+            margin-top:0px auto;
+            margin-left: 27%;
+            }
+            .bandeira{
+            display:none;
+                
+                }
+                .botao  {
+            
+                    width: 32%; /* Define a largura como 100%*/
+                    margin-left: 37%;
+                    
+                }
+                a {
+                  font-size:12px;
+                  color: #f3f8f8; 
+                  font-size: center;
+                  margin-left: 39.5%;
+                    
+                }
+                h1{
+                margin-top: 25px;
+                font-size: 21px;
+                text-align: 120px;
+                display: flex;
+                margin-left: 24%;
+                    
+                
+                }
+
+                .texto{ 
+                    
+                  display: flex;
+                  font-size: 23px;
+                  margin-left: 40%;
+        }
+        
+    body{
+        justify-content: center;
+
+    }
+    .senha input {
+        
+    
+
+    border-top: center; 
+   
+    margin-left: 20%; 
+    width: 64%; 
+    
+    }
+    #digito {
+
+        margin-left: 0%; 
+        width: 13%;
+         
+    }
+    .RA input {
+
+        margin-left: 20%;
+        width: 50%;
+        
+    }
+   .metade{
+      width: 240px;
+      height: 190px;
+
+
+
+      border-radius:  1px ;
+    }
+    .circulo{
+
+      width: 70px;
+      height: 70px;
+      border: solid 10px #D82A2A;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      margin-top: -70px;
+      align-items: center;
+    }
+
+    #cima{
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .x{
+
+      height: 25px;
+
+    }
+    #baixo{
+
+
+      height:140px;        
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -100px;
+      flex-direction: column;
+    }
+
+    #ops{
+
+      color: #353030;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      text-align: center;
+
+
+    }
+    #mensagem{
+        color: #353030;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 200;
+      font-size:15px;
+      align-items: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .okButton{
+
+      background-color: #1148a8   ;
+      color: #FFFFFF;
+      width: 90px;
+      height: 53px;
+      border:solid 1px rgb(17, 16, 16); 
+      border-radius: 50px ;
+      cursor: pointer;
+     transition-duration: 0.4s; 
+      transition-duration: 0.4s;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    .okButton:hover{
+
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+
+
+    }
+    .modal {
+      height: 270px;
+      margin-left: 7%;
+      margin-top: 175px;
+}
+
+    #Esqueceu{
+        margin-left: 126px;
+    }
+    #Suporte{
+      margin-left: 162px;
+      
+    }
+    #Cadastro{
+      margin-left: 160px;
+      
+    }
+    .botao{
+      margin-bottom: 15px;
+    }
+    .cadastro{
+      margin-top: 20px;
+      margin-left: 10px;
+    }
+  }
+
+
+  /*AQUI ACABA O MEDIA QUERY*/
+
+

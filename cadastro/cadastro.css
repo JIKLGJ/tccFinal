@@ -1,0 +1,302 @@
+body {     
+    background-color: #0bb962;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(15,12,41,1) 0%, rgba(48,43,99,1) 35%, rgba(36,36,62,1) 100%);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.card {
+  
+    border-radius: 8px;
+    box-shadow: 5px 20px 50px rgba(0, 0, 0, 0.8);
+    width: 600px;
+    padding: 40px;
+    margin: 26px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+}
+
+.RA input {
+        
+                
+    width: 43%; /* Define a largura do campo de entrada */
+    padding: 15px; /* Adiciona preenchimento interno */
+    margin-bottom: 17px; /* Adiciona margem inferior */
+    border: 2px solid #1148a8 ; /* Adiciona uma borda sólida */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    box-sizing: border-box; /* Inclui o preenchimento e a borda na largura total */
+    transition: 0.3s; /* Adiciona uma transição suave */
+    margin-top: 20px; /* Adiciona margem superior */
+    border-radius: 15px;
+    margin-left: 4%;
+  
+    
+
+}
+.senha input {
+        
+            
+            
+    width: 44%; /* Define a largura do campo de entrada */
+    padding: 15px; /* Adiciona preenchimento interno */
+    margin-bottom: 20px; /* Adiciona margem inferior */
+    border: 2px solid #1148a8 ; /* Adiciona uma borda sólida */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    box-sizing: border-box; /* Inclui o preenchimento e a borda na largura total */
+
+    margin-top: auto; /* Adiciona margem superior */
+    border-radius: 15px;
+    margin-left: -1%;
+
+}
+#digito {
+    background-color: #fdfdfd;
+    color: #8a66dd;
+    width: 50px;
+    height: 49px;
+    border: 2px solid #1148a8 ; /* Adiciona uma borda sólida */
+    border-radius: 15px;
+    transition: 0.3s; /* Adiciona uma transição suave */
+    cursor: pointer; /* Define o cursor como ponteiro */
+    margin-right: 10px;
+}
+i{
+    color: black;
+    position: relative;
+    right: 40px;
+    opacity: 0.3;
+    cursor: pointer; /* Define o cursor como ponteiro */
+}
+
+input:focus, select:focus {
+    border-color: #1dd1f1;
+    outline: none;
+}
+
+
+
+.logo {
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
+button {
+    width: 180px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #573b8a;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px auto;
+    border: none;
+    transition: .2s; 
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 8px #98b2be;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+a {
+   
+    color: #ffffff; /* Cor do texto do link ao passar o mouse */
+  text-decoration: none; /* Remove o sublinhado padrão dos links */
+  display: inline-block; /* Permite aplicar padding e margin */
+  transition: .2s; /* Transição suave para propriedades alteradas */
+  margin: 0 auto;
+    display: block;
+    margin-right: 20px;
+cursor: pointer;
+}
+ ul li {
+    display: inline-block; /* Exibe itens da lista horizontalmente */
+    padding: 0 30px; /* Espaçamento horizontal ao redor dos itens */
+    text-align: center; /* Alinhamento centralizado do texto nos itens da lista */
+    font-size: 20px;
+  }
+
+
+  
+  /* Estilo para links no cabeçalho ao passar o mouse sobre eles */
+   a:hover {
+    color: #1dd1f1; /* Cor do texto dos links */
+    transform: scale(1.05); /* Aumenta o tamanho do link levemente */
+  }
+  
+  /* Estilo para listas de navegação dentro do cabeçalho */
+ ul {
+    list-style-type: none; /* Remove os marcadores das listas */
+  }
+.okButton {
+    background-color: #573b8a;
+    color: #FFFFFF;
+    width: 115px;
+   height: 40px;
+
+
+    border-radius: 50px;
+    cursor: pointer;
+    transition: box-shadow 0.4s;
+}
+
+.okButton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+#modal, #modal2 {
+    border-radius: 20px;
+    border: solid 2px #dbd6d6;
+    padding: 20px;
+    width: 30%;
+}
+ .modal {
+    border-radius: 20px;
+ border: solid 2px #dbd6d6;
+}
+
+.metade{
+ 
+  height: 260px;
+  
+  border-radius: 1px ;
+}
+.circulo{
+  
+  width: 115px;
+  height: 115px;
+  border: solid 10px #D82A2A;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  margin-top: -70px;
+  align-items: center;
+}
+.circulo2{
+  
+    width: 115px;
+    height: 115px;
+    border: solid 10px #0bb962;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    margin-top: -70px;
+    align-items: center;
+  }
+#cima{
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.x{
+  
+  height: 60px;
+
+}
+#baixo{
+
+  height:300px;        
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -100px;
+  flex-direction: column;
+}
+
+#ops{
+  
+  color: #353030;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  text-align: center;
+
+}
+
+
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    button {
+        width: 150px;
+    }
+
+    input, select {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+    .formulario {
+        gap: 12px;
+    }
+    input, select {
+        font-size: 14px;
+    }
+    button {
+        width: 140px;
+    }
+    .RA{
+        display: inline;
+        }
+        #number1{
+            width: 125px;
+        }
+        #senha{
+            width: 175px;
+            margin-left: 15px;
+        }
+        ul{
+        margin-right: 19px;    
+        }
+        h2{
+            font-size: 24px;
+        }
+        
+        #modal {
+            width: 300px;
+            height: 400px;
+    
+            margin: 0px;
+        }
+
+    }
