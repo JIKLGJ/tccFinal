@@ -15,34 +15,26 @@
             <h2>Suporte</h2>
 
             <div class="formulario">
-                <form action="https://formsubmit.co/texugopardo@gmail.com" method="POST" id="formSuporte">
-                    <label for="mensagem">Descreva seu problema:</label>
-                    <textarea name="mensagem" id="mensagem" required aria-describedby="erroMensagem"></textarea>
-                    <div id="erroMensagem" class="erro" style="display:none;">Por favor, preencha a mensagem.</div>
-                    <button type="submit">Enviar</button>
-                </form>
-
+                <div class="formulario">
+                    <form action="https://formsubmit.co/texugopardo@gmail.com" method="POST" id="formSuporte">
+                        <textarea name="mensagem" id="mensagem" required aria-describedby="erroMensagem" placeholder="Descreva seu problema:"></textarea>
+                        <div id="erroMensagem" class="erro" style="display:none;">Por favor, preencha a mensagem.</div>
+                        
+                        <!-- Campo "honey" para proteger contra bots -->
+                        <input type="text" name="honey" style="display: none;">
+                        
+                        <!-- Configuração de comportamento do FormSubmit -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://jiklgj.github.io/tccFinal/index.html">
+                      
+                        <button type="submit">Enviar</button>
+                    </form>
                 <a href="../index.html" class="sair">Sair</a>
             </div>
         </div>
     </div>
 
-    <!-- Modal de erro -->
-    <dialog class="modal" id="modal">
-        <div class="circulo">
-            <img class="x" src="https://freepngtransparent.com/wp-content/uploads/2023/03/X-Png-109.png" alt="Ícone de erro">
-        </div>
-        <p id="ops1">Preencha todos os campos corretamente.</p>
-        <button id="okButton" class="okButton2">OK</button>
-    </dialog>
-
    
-    <dialog class="modal2" id="modal2">
-        <p id="ops">O erro foi relatado.</p>
-        <button id="okButton2" class="okButton1">OK</button>
-    </dialog>
-
-    <script src="./supotelg.js"></script>
 </body>
 
 </html>
