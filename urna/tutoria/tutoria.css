@@ -241,4 +241,9 @@ cursor: pointer;
     button {
         width: 140px;
     }
+
+    #nome{
+
+        width: 260px;
+    }
 }
