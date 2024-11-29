@@ -100,28 +100,34 @@ async function verificarNomeExistente(nome) {
 
 // Validação e envio
 botao.addEventListener("click", async (event) => {
-  event.preventDefault(); // Impede o comportamento padrão do botão
+    event.preventDefault(); // Evita envio do formulário
 
-  // Validação básica do campo de entrada
-  if (nomeInput.value === "" || nomeInput.value.length < 9) {
-      exibirModalErro("Digite seu nome corretamente!");
-      return; // Sai da função para evitar execução adicional
-  }
+    // Validação do nome
+    if (nomeInput.value.trim() === "" || nomeInput.value.length < 9) {
+        exibirModalErro("Digite seu nome corretamente!");
+        return;
+    }
 
-  // Verifica se o nome já existe no Firebase
-  const nomeExistente = await verificarNomeExistente(nomeInput.value);
+    try {
+        // Verificar se o nome já existe
+        const nomeExistente = await verificarNomeExistente(nomeInput.value);
 
-  if (nomeExistente) {
-      exibirModalErro("Sua escolha não pode ser alterada!");
-      return; // Sai da função para evitar execução adicional
-  }
+        if (nomeExistente) {
+            exibirModalErro("Sua escolha não pode ser alterada!");
+            return;
+        }
 
-  // Se passou nas validações, envia ao Firebase
-  await POST();
+        // Enviar ao Firebase
+        await POST();
 
-  // Após o envio, submete o formulário
-  emailForm.submit();
+        // Submeter o formulário após validação
+        emailForm.submit();
+    } catch (error) {
+        console.error("Erro durante validação ou envio:", error);
+        exibirModalErro("Ocorreu um erro. Tente novamente mais tarde.");
+    }
 });
+
 
 
 okButton.addEventListener("click", () => modalErro.close());
