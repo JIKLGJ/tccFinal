@@ -2,55 +2,29 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/fireba
 
 // Configuração Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyDbQH9lRIEfYeXGA92QWVIkZ0No6-5xrio",
-  authDomain: "urna-ec7a7.firebaseapp.com",
-  databaseURL: "https://urna-ec7a7-default-rtdb.firebaseio.com",
-  projectId: "urna-ec7a7",
-  storageBucket: "urna-ec7a7.appspot.com",
-  messagingSenderId: "153920023241",
-  appId: "1:153920023241:web:35473099846372372ffb18"
+    apiKey: "AIzaSyDbQH9lRIEfYeXGA92QWVIkZ0No6-5xrio",
+    authDomain: "urna-ec7a7.firebaseapp.com",
+    databaseURL: "https://urna-ec7a7-default-rtdb.firebaseio.com",
+    projectId: "urna-ec7a7",
+    storageBucket: "urna-ec7a7.appspot.com",
+    messagingSenderId: "153920023241",
+    appId: "1:153920023241:web:35473099846372372ffb18"
 };
 
 // Inicializar Firebase
 const app = initializeApp(firebaseConfig);
 
-// Seleção dos elementos
-const seriesInput = document.querySelector("#series");
+// Seleção de elementos
 const nomeInput = document.querySelector("#nome");
 
-const escolhaInput = document.querySelector("#escolha");
 const botao = document.querySelector("#botao");
 
-var okButton = document.querySelector('#okButton');
-const modal = document.querySelector("#modal");
-const modal2 = document.querySelector("#modal2");
-var okButton2 = document.querySelector('#okButton2');
-// Função POST
-async function POST() {
-  const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/eletiva.json";
-  
-  const newData = {
-    nome: nomeInput.value,
-    serie: seriesInput.value,
-    escolha: escolhaInput.value
-    
-  };
+const modalErro = document.querySelector("#modalErro");
 
-  try {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(newData)
-    });
+const okButton = document.querySelector("#okButton");
 
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
+
+const emailForm = document.querySelector("#emailForm");
 // Adiciona um ouvinte de evento para o campo de entrada nomeInput
 nomeInput.addEventListener("keypress", function(e) {
   
@@ -65,34 +39,82 @@ nomeInput.addEventListener("keypress", function(e) {
   }
 });
 
-// Validação dos dados e envio ao clicar no botão
-botao.addEventListener('click', () => {
-  // Verificação de dados vazios ou incompletos
-  if (nomeInput.value === '' ||   nomeInput.value.length < 9) {
-    // Exibir modal de erro
-    modal.showModal(); 
-    
+// Função para exibir modal de erro
+function exibirModalErro(mensagem) {
+    const opsText = document.querySelector("#ops");
+    opsText.textContent = mensagem;
+    modalErro.showModal();
+}
+
+// Função POST para enviar ao Firebase
+async function POST() {
+    const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/eletiva.json";
+
+    const newData = {
+        nome: nomeInput.value,
+       
+    };
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newData),
+        });
+
+        const data = await response.json();
+        console.log("Enviado ao Firebase:", data);
+    } catch (error) {
+        console.error("Erro ao enviar ao Firebase:", error);
+    }
+}
+
+// Função para verificar se o nome já existe no Firebase
+async function verificarNomeExistente(nome) {
+    const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/eletiva.json";
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        for (const key in data) {
+            if (data[key].nome === nome) {
+                return true;
+            }
+        }
+        return false;
+    } catch (error) {
+        console.error("Erro ao verificar nome:", error);
+        return false;
+    }
+}
+
+// Validação e envio
+botao.addEventListener("click", async (event) => {
+  event.preventDefault(); // Impede o comportamento padrão do botão
+
+  // Validação básica do campo de entrada
+  if (nomeInput.value === "" || nomeInput.value.length < 9) {
+      exibirModalErro("Digite seu nome corretamente!");
+      return; // Sai da função para evitar execução adicional
   }
-  
-  
-  else {
-    // Exibir modal de sucesso
-    modal2.showModal();
-      POST(); // Chamar a função POST depois de fechar o modal
-      botao.disabled = true;
-      botao.style.backgroundColor = 'gray';
-      botao.style.cursor = 'not-allowed';
+
+  // Verifica se o nome já existe no Firebase
+  const nomeExistente = await verificarNomeExistente(nomeInput.value);
+
+  if (nomeExistente) {
+      exibirModalErro("Sua escolha não pode ser alterada!");
+      return; // Sai da função para evitar execução adicional
   }
+
+  // Se passou nas validações, envia ao Firebase
+  await POST();
+
+  // Após o envio, submete o formulário
+  emailForm.submit();
 });
-document.addEventListener('DOMContentLoaded', () => {
-    // Fechar o primeiro modal
-    okButton.addEventListener('click', () => {
-      modal.close();
-    });
-  
-    // Fechar o segundo modal corretamente
-    okButton2.addEventListener('click', () => {
-      modal2.close(); // Correção: agora fecha o modal2, não o modal
-    });
-  });
-  
+
+
+okButton.addEventListener("click", () => modalErro.close());
