@@ -73,22 +73,29 @@ async function POST() {
 
 // Função para verificar se o nome já existe no Firebase
 async function verificarNomeExistente(nome) {
-    const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/eletiva.json";
+  // URL já está limitada à coleção "eletiva"
+  const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/clube.json";
 
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
+  try {
+      const response = await fetch(url);
 
-        for (const key in data) {
-            if (data[key].nome === nome) {
-                return true;
-            }
-        }
-        return false;
-    } catch (error) {
-        console.error("Erro ao verificar nome:", error);
-        return false;
-    }
+      if (!response.ok) {
+          throw new Error(`Erro na requisição: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if (!data) {
+          // Caso a coleção "eletiva" esteja vazia
+          return false;
+      }
+
+      // Verifica se algum item da coleção "eletiva" tem o nome igual
+      return Object.values(data).some(entry => entry?.nome === nome);
+  } catch (error) {
+      console.error("Erro ao verificar nome na coleção 'eletiva':", error.message);
+      return false; // Em caso de erro, considera que o nome não existe
+  }
 }
 
 // Validação e envio
