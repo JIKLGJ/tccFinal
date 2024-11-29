@@ -48,7 +48,7 @@ function exibirModalErro(mensagem) {
 
 // Função POST para enviar ao Firebase
 async function POST() {
-    const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/eletiva.json";
+    const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/tutoria.json";
 
     const newData = {
         nome: nomeInput.value,
@@ -74,7 +74,7 @@ async function POST() {
 // Função para verificar se o nome já existe no Firebase
 async function verificarNomeExistente(nome) {
   // URL já está limitada à coleção "eletiva"
-  const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/tutoria.json";
+  const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/eletiva.json";
 
   try {
       const response = await fetch(url);
@@ -128,10 +128,6 @@ botao.addEventListener("click", async (event) => {
     }
 });
 
-
-  // Após o envio, submete o formulário
-  emailForm.submit();
-});
 
 
 okButton.addEventListener("click", () => modalErro.close());
