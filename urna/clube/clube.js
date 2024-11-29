@@ -48,7 +48,7 @@ function exibirModalErro(mensagem) {
 
 // Função POST para enviar ao Firebase
 async function POST() {
-    const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/clube.json";
+    const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/eletiva.json";
 
     const newData = {
         nome: nomeInput.value,
@@ -99,13 +99,6 @@ async function verificarNomeExistente(nome) {
 }
 
 // Validação e envio
-function exibirModalErro(mensagem) {
-    const opsText = document.querySelector("#ops");
-    opsText.textContent = mensagem;
-    modalErro.showModal();
-}
-
-// Validação e envio ao Firebase
 botao.addEventListener("click", async (event) => {
     event.preventDefault(); // Evita envio do formulário
 
@@ -135,7 +128,6 @@ botao.addEventListener("click", async (event) => {
     }
 });
 
-// Fechar modal ao clicar no botão OK
+
+
 okButton.addEventListener("click", () => modalErro.close());
-
-
