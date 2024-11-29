@@ -46,6 +46,7 @@ input, select {
     padding-left: 16px;
     font-size: 16px;
     cursor: pointer;
+    margin: 5px;
     border-radius: 15px;
     
 }
@@ -143,10 +144,9 @@ cursor: pointer;
     border-radius: 20px;
     border: solid 2px #dbd6d6;
     padding: 20px;
-  width: 500px;
+    width: 500px;
 }
  .modal {
-   
     border-radius: 20px;
  border: solid 2px #dbd6d6;
 }
@@ -245,7 +245,6 @@ cursor: pointer;
 
     #nome{
 
-        width: 262px;
-
+        width: 260px;
     }
 }
