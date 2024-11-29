@@ -48,16 +48,16 @@ function exibirModalErro(mensagem) {
 
 // Função POST para enviar ao Firebase
 async function POST() {
-    const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/eletiva.json";
+    const nomeSanitizado = nomeInput.value.trim();
+    const url = `https://urna-ec7a7-default-rtdb.firebaseio.com/eletiva/${nomeSanitizado}.json`;
 
     const newData = {
-        nome: nomeInput.value,
-       
+        nome: nomeSanitizado,
     };
 
     try {
         const response = await fetch(url, {
-            method: "POST",
+            method: "PUT", // Substitui "POST" por "PUT" para usar o nome como chave
             headers: {
                 "Content-Type": "application/json",
             },
@@ -71,31 +71,27 @@ async function POST() {
     }
 }
 
+
 // Função para verificar se o nome já existe no Firebase
 async function verificarNomeExistente(nome) {
-  // URL já está limitada à coleção "eletiva"
-  const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/eletiva.json";
+    const nomeSanitizado = nome.trim();
+    const url = `https://urna-ec7a7-default-rtdb.firebaseio.com/eletiva/${nomeSanitizado}.json`;
 
-  try {
-      const response = await fetch(url);
+    try {
+        const response = await fetch(url);
 
-      if (!response.ok) {
-          throw new Error(`Erro na requisição: ${response.status}`);
-      }
+        if (!response.ok) {
+            throw new Error(`Erro na requisição: ${response.status}`);
+        }
 
-      const data = await response.json();
+        const data = await response.json();
 
-      if (!data) {
-          // Caso a coleção "eletiva" esteja vazia
-          return false;
-      }
-
-      // Verifica se algum item da coleção "eletiva" tem o nome igual
-      return Object.values(data).some(entry => entry?.nome === nome);
-  } catch (error) {
-      console.error("Erro ao verificar nome na coleção 'eletiva':", error.message);
-      return false; // Em caso de erro, considera que o nome não existe
-  }
+        // Se o dado existir, retorna true
+        return !!data;
+    } catch (error) {
+        console.error("Erro ao verificar nome na coleção 'eletiva':", error.message);
+        return false; // Em caso de erro, considera que o nome não existe
+    }
 }
 
 // Validação e envio
@@ -103,14 +99,15 @@ botao.addEventListener("click", async (event) => {
     event.preventDefault(); // Evita envio do formulário
 
     // Validação do nome
-    if (nomeInput.value.trim() === "" || nomeInput.value.length < 9) {
+    const nomeSanitizado = nomeInput.value.trim();
+    if (nomeSanitizado === "" || nomeSanitizado.length < 9) {
         exibirModalErro("Digite seu nome corretamente!");
         return;
     }
 
     try {
         // Verificar se o nome já existe
-        const nomeExistente = await verificarNomeExistente(nomeInput.value);
+        const nomeExistente = await verificarNomeExistente(nomeSanitizado);
 
         if (nomeExistente) {
             exibirModalErro("Sua escolha não pode ser alterada!");
@@ -127,6 +124,7 @@ botao.addEventListener("click", async (event) => {
         exibirModalErro("Ocorreu um erro. Tente novamente mais tarde.");
     }
 });
+
 
 
 
