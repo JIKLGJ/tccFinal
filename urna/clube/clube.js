@@ -16,66 +16,59 @@ const app = initializeApp(firebaseConfig);
 
 // Seleção de elementos
 const nomeInput = document.querySelector("#nome");
-
 const botao = document.querySelector("#botao");
-
 const modalErro = document.querySelector("#modalErro");
-
 const okButton = document.querySelector("#okButton");
-
-
 const emailForm = document.querySelector("#emailForm");
-// Adiciona um ouvinte de evento para o campo de entrada nomeInput
-nomeInput.addEventListener("keypress", function(e) {
-  
-  // Obtém o código da tecla pressionada, usando keyCode ou which dependendo da compatibilidade do navegador
-  const keyCode = (e.keyCode ? e.keyCode : e.which);
-  
-  // Verifica se o código da tecla está entre 48 e 57 (que são os códigos ASCII dos números 0 a 9)
-  if (keyCode > 47 && keyCode < 58) {
-    
-    // Se for um número, impede que o número seja inserido no campo de texto
-    e.preventDefault();
-  }
+
+// Impedir a inserção de números no campo de nome
+nomeInput.addEventListener("keypress", (e) => {
+    const keyCode = e.keyCode || e.which;
+    if (keyCode >= 48 && keyCode <= 57) {
+        e.preventDefault();
+    }
 });
 
 // Função para exibir modal de erro
 function exibirModalErro(mensagem) {
     const opsText = document.querySelector("#ops");
-    opsText.textContent = mensagem;
-    modalErro.showModal();
+    if (opsText) {
+        opsText.textContent = mensagem;
+    }
+    if (modalErro) {
+        modalErro.showModal();
+    } else {
+        alert(mensagem); // Fallback caso o modal não exista
+    }
 }
 
 // Função POST para enviar ao Firebase
-async function POST() {
-    const nomeSanitizado = nomeInput.value.trim();
-    const url = `https://urna-ec7a7-default-rtdb.firebaseio.com/eletiva/${nomeSanitizado}.json`;
+async function POST(nomeSanitizado) {
+    const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/clube/.json";
 
-    const newData = {
-        nome: nomeSanitizado,
-    };
+    const newData = { nome: nomeSanitizado };
 
     try {
         const response = await fetch(url, {
-            method: "PUT", // Substitui "POST" por "PUT" para usar o nome como chave
-            headers: {
-                "Content-Type": "application/json",
-            },
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newData),
         });
 
-        const data = await response.json();
-        console.log("Enviado ao Firebase:", data);
+        if (!response.ok) {
+            throw new Error(`Erro ao enviar dados: ${response.status}`);
+        }
+
+        console.log("Enviado ao Firebase:", await response.json());
     } catch (error) {
         console.error("Erro ao enviar ao Firebase:", error);
     }
 }
 
-
-// Função para verificar se o nome já existe no Firebase
+// Função para verificar se o nome já existe na coleção 'eletiva'
 async function verificarNomeExistente(nome) {
     const nomeSanitizado = nome.trim();
-    const url = `https://urna-ec7a7-default-rtdb.firebaseio.com/clube/${nomeSanitizado}.json`;
+    const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/clube.json";
 
     try {
         const response = await fetch(url);
@@ -86,38 +79,37 @@ async function verificarNomeExistente(nome) {
 
         const data = await response.json();
 
-        // Se o dado existir, retorna true
-        return !!data;
+        if (data) {
+            return Object.values(data).some((entry) => entry.nome === nomeSanitizado);
+        }
+
+        return false;
     } catch (error) {
-        console.error("Erro ao verificar nome na coleção 'eletiva':", error.message);
-        return false; // Em caso de erro, considera que o nome não existe
+        console.error("Erro ao verificar nome:", error.message);
+        return false; // Considera que o nome não existe em caso de erro
     }
 }
 
 // Validação e envio
 botao.addEventListener("click", async (event) => {
-    event.preventDefault(); // Evita envio do formulário
+    event.preventDefault();
 
-    // Validação do nome
     const nomeSanitizado = nomeInput.value.trim();
-    if (nomeSanitizado === "" || nomeSanitizado.length < 9) {
+
+    if (!nomeSanitizado || nomeSanitizado.length < 9) {
         exibirModalErro("Digite seu nome corretamente!");
         return;
     }
 
     try {
-        // Verificar se o nome já existe
         const nomeExistente = await verificarNomeExistente(nomeSanitizado);
 
         if (nomeExistente) {
-            exibirModalErro("Sua escolha não pode ser alterada!");
+            exibirModalErro(" Não é possível enviar uma nova escolha!");
             return;
         }
 
-        // Enviar ao Firebase
-        await POST();
-
-        // Submeter o formulário após validação
+        await POST(nomeSanitizado);
         emailForm.submit();
     } catch (error) {
         console.error("Erro durante validação ou envio:", error);
@@ -125,7 +117,9 @@ botao.addEventListener("click", async (event) => {
     }
 });
 
-
-
-
-okButton.addEventListener("click", () => modalErro.close());
+// Fechar o modal de erro
+okButton.addEventListener("click", () => {
+    if (modalErro) {
+        modalErro.close();
+    }
+});
