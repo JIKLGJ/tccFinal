@@ -16,25 +16,15 @@ const app = initializeApp(firebaseConfig);
 
 // Seleção de elementos
 const nomeInput = document.querySelector("#nome");
-
 const botao = document.querySelector("#botao");
-
 const modalErro = document.querySelector("#modalErro");
-
 const okButton = document.querySelector("#okButton");
-
-
 const emailForm = document.querySelector("#emailForm");
-// Adiciona um ouvinte de evento para o campo de entrada nomeInput
+
+// Impedir a inserção de números no campo de nome
 nomeInput.addEventListener("keypress", function(e) {
-  
-  // Obtém o código da tecla pressionada, usando keyCode ou which dependendo da compatibilidade do navegador
   const keyCode = (e.keyCode ? e.keyCode : e.which);
-  
-  // Verifica se o código da tecla está entre 48 e 57 (que são os códigos ASCII dos números 0 a 9)
   if (keyCode > 47 && keyCode < 58) {
-    
-    // Se for um número, impede que o número seja inserido no campo de texto
     e.preventDefault();
   }
 });
@@ -47,9 +37,8 @@ function exibirModalErro(mensagem) {
 }
 
 // Função POST para enviar ao Firebase
-async function POST() {
-    const nomeSanitizado = nomeInput.value.trim();
-    const url = `https://urna-ec7a7-default-rtdb.firebaseio.com/tutoria/${nomeSanitizado}.json`;
+async function POST(nomeSanitizado) {
+    const url = `https://urna-ec7a7-default-rtdb.firebaseio.com/tutoria/.json`;
 
     const newData = {
         nome: nomeSanitizado,
@@ -57,7 +46,7 @@ async function POST() {
 
     try {
         const response = await fetch(url, {
-            method: "PUT", // Substitui "POST" por "PUT" para usar o nome como chave
+            method: "POST", 
             headers: {
                 "Content-Type": "application/json",
             },
@@ -71,11 +60,10 @@ async function POST() {
     }
 }
 
-
-// Função para verificar se o nome já existe no Firebase
+// Função para verificar se o nome já existe na coleção 'tutoria'
 async function verificarNomeExistente(nome) {
     const nomeSanitizado = nome.trim();
-    const url = `https://urna-ec7a7-default-rtdb.firebaseio.com/eletiva/${nomeSanitizado}.json`;
+    const url = `https://urna-ec7a7-default-rtdb.firebaseio.com/tutoria.json`; // Verifica toda a coleção
 
     try {
         const response = await fetch(url);
@@ -86,10 +74,18 @@ async function verificarNomeExistente(nome) {
 
         const data = await response.json();
 
-        // Se o dado existir, retorna true
-        return !!data;
+        // Se os dados não estiverem vazios, verificamos se o nome já existe na coleção
+        if (data) {
+            for (const key in data) {
+                if (data[key].nome === nomeSanitizado) {
+                    return true; // Nome já existe na coleção
+                }
+            }
+        }
+
+        return false; // Nome não existe
     } catch (error) {
-        console.error("Erro ao verificar nome na coleção 'eletiva':", error.message);
+        console.error("Erro ao verificar nome na coleção 'tutoria':", error.message);
         return false; // Em caso de erro, considera que o nome não existe
     }
 }
@@ -106,16 +102,16 @@ botao.addEventListener("click", async (event) => {
     }
 
     try {
-        // Verificar se o nome já existe
+        // Verificar se o nome já existe na coleção 'tutoria'
         const nomeExistente = await verificarNomeExistente(nomeSanitizado);
 
         if (nomeExistente) {
-            exibirModalErro("Sua escolha não pode ser alterada!");
+            exibirModalErro("Não é possível enviar uma nova escolha!");
             return;
         }
 
         // Enviar ao Firebase
-        await POST();
+        await POST(nomeSanitizado);
 
         // Submeter o formulário após validação
         emailForm.submit();
@@ -125,7 +121,5 @@ botao.addEventListener("click", async (event) => {
     }
 });
 
-
-
-
+// Fechar o modal de erro
 okButton.addEventListener("click", () => modalErro.close());
