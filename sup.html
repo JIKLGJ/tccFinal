@@ -17,14 +17,15 @@
             <div class="formulario">
                 <div class="formulario">
                     <form action="https://formsubmit.co/texugopardo@gmail.com" method="POST" id="formSuporte">
-                        <textarea name="mensagem" id="mensagem" required aria-describedby="erroMensagem" placeholder="Descreva seu problema:"></textarea>
-                        <div id="erroMensagem" class="erro" style="display:none;">Por favor, preencha a mensagem.</div>
+                        <textarea name="mensagem" id="mensagem" required aria-describedby="erroMensagem" placeholder="Descreva o seu problema:"></textarea>
+                        <div id="erroMensagem" class="erro" style="display:none;">Por favor, preencha este campo.</div>
                         
                         <!-- Campo "honey" para proteger contra bots -->
                         <input type="text" name="honey" style="display: none;">
                         
-                      <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://jiklgj.github.io/tccFinal/tela%20de%20bem%20vindo.html">
+                        <!-- Configuração de comportamento do FormSubmit -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://jiklgj.github.io/tccFinal/index.html">
                       
                         <button type="submit">Enviar</button>
                     </form>
