@@ -42,14 +42,14 @@ body {
 .RA input {
         
                 
-    width: 43%; /* Define a largura do campo de entrada */
-    padding: 15px; /* Adiciona preenchimento interno */
-    margin-bottom: 17px; /* Adiciona margem inferior */
-    border: 2px solid #1148a8 ; /* Adiciona uma borda sólida */
-    border-radius: 5px; /* Adiciona bordas arredondadas */
-    box-sizing: border-box; /* Inclui o preenchimento e a borda na largura total */
-    transition: 0.3s; /* Adiciona uma transição suave */
-    margin-top: 20px; /* Adiciona margem superior */
+    width: 43%; 
+    padding: 15px; 
+    margin-bottom: 17px;
+    border: 2px solid #1148a8 ; 
+    border-radius: 5px; 
+    box-sizing: border-box; 
+    transition: 0.3s; 
+    margin-top: 20px; 
     border-radius: 15px;
     margin-left: 4%;
   
@@ -60,14 +60,14 @@ body {
         
             
             
-    width: 44%; /* Define a largura do campo de entrada */
-    padding: 15px; /* Adiciona preenchimento interno */
-    margin-bottom: 20px; /* Adiciona margem inferior */
-    border: 2px solid #1148a8 ; /* Adiciona uma borda sólida */
-    border-radius: 5px; /* Adiciona bordas arredondadas */
-    box-sizing: border-box; /* Inclui o preenchimento e a borda na largura total */
+    width: 44%;
+    padding: 15px;
+    margin-bottom: 20px; 
+    border: 2px solid #1148a8 ;
+    border-radius: 5px; 
+    box-sizing: border-box; 
 
-    margin-top: auto; /* Adiciona margem superior */
+    margin-top: auto; 
     border-radius: 15px;
     margin-left: -1%;
 
@@ -77,10 +77,10 @@ body {
     color: #8a66dd;
     width: 50px;
     height: 49px;
-    border: 2px solid #1148a8 ; /* Adiciona uma borda sólida */
+    border: 2px solid #1148a8 ; 
     border-radius: 15px;
-    transition: 0.3s; /* Adiciona uma transição suave */
-    cursor: pointer; /* Define o cursor como ponteiro */
+    transition: 0.3s;
+    cursor: pointer; 
     margin-right: 10px;
 }
 i{
@@ -88,7 +88,7 @@ i{
     position: relative;
     right: 40px;
     opacity: 0.3;
-    cursor: pointer; /* Define o cursor como ponteiro */
+    cursor: pointer; 
 }
 
 input:focus, select:focus {
@@ -130,33 +130,33 @@ h2 {
 
 a {
    
-    color: #ffffff; /* Cor do texto do link ao passar o mouse */
-  text-decoration: none; /* Remove o sublinhado padrão dos links */
-  display: inline-block; /* Permite aplicar padding e margin */
-  transition: .2s; /* Transição suave para propriedades alteradas */
+    color: #ffffff;
+  text-decoration: none;
+  display: inline-block; 
+  transition: .2s;
   margin: 0 auto;
     display: block;
     margin-right: 20px;
 cursor: pointer;
 }
  ul li {
-    display: inline-block; /* Exibe itens da lista horizontalmente */
-    padding: 0 30px; /* Espaçamento horizontal ao redor dos itens */
-    text-align: center; /* Alinhamento centralizado do texto nos itens da lista */
+    display: inline-block; 
+    padding: 0 30px; 
+    text-align: center; 
     font-size: 20px;
   }
 
 
   
-  /* Estilo para links no cabeçalho ao passar o mouse sobre eles */
+  
    a:hover {
-    color: #1dd1f1; /* Cor do texto dos links */
-    transform: scale(1.05); /* Aumenta o tamanho do link levemente */
+    color: #1dd1f1; 
+    transform: scale(1.05);
   }
   
-  /* Estilo para listas de navegação dentro do cabeçalho */
+ 
  ul {
-    list-style-type: none; /* Remove os marcadores das listas */
+    list-style-type: none; 
   }
 .okButton {
     background-color: #573b8a;
