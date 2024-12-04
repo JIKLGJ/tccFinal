@@ -250,6 +250,7 @@ cursor: pointer;
 @media (max-width: 500px) {
     .formulario {
         gap: 12px;
+        
     }
     input, select {
         font-size: 14px;

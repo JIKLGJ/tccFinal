@@ -252,24 +252,6 @@ cursor: pointer;
 }
 
 
-@media (max-width: 768px) {
-    .card {
-        width: 90%;
-        padding: 20px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    button {
-        width: 150px;
-    }
-
-    input, select {
-        font-size: 14px;
-    }
-}
 
 @media (max-width: 500px) {
     .formulario {
