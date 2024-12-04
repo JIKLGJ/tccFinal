@@ -37,7 +37,7 @@ projetotcc2024
 
 ├── suporte.juan
 │   ├── suporte.css
-│   └── suporte.js
+│   
 ├── tela.de.login
 │   ├── login.css
 │   ├── login.jss
