@@ -53,7 +53,7 @@ function isValidRA(ra) {
   return ra && ra.length >= 9 && ra.length <= 12 && !isNaN(ra);
 }
 
-u
+
 function hasVoted(ra) {
   const votedRAs = JSON.parse(localStorage.getItem('votedRAs') || "[]");
   return votedRAs.includes(ra);
