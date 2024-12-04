@@ -11,16 +11,14 @@
         <img class="logo" src="./images/logo.png" alt="Tutoria">
         <h1>Vote em sua chapa</h1>
         
-    <div class="RA" >
-        <!-- Campo para digitar o RA -->
-        <input type="text"  id="number1" placeholder="Digite seu RA" maxlength="12">
-</div>
-        <!-- Botões de votação -->
+        <div class="RA">
+            <input type="text" id="number1" placeholder="Digite seu RA" maxlength="12">
+        </div>
+
         <button onclick="handleVote('chapa-A')">Votar na chapa - A</button>
         <button onclick="handleVote('chapa-B')">Votar na chapa - B</button>
         <button onclick="handleVote('chapa-C')">Votar na chapa - C</button>
-        
-        <!-- Resultados -->
+
         <div class="results">
             <h2>Resultados</h2>
             <p>Chapa - A: <span id="chapa-A-votes">0</span></p>
@@ -29,14 +27,12 @@
         </div>
     </div>
 
-    <!-- Modal de confirmação -->
     <dialog id="errorModal" class="modal-erro">
         <div class="modal-content">
             <h2 id="errorModalMessage"></h2>
             <button class="erro" onclick="closeErrorModal()">Fechar</button>
         </div>
     </dialog>
-    
 
     <dialog id="voteModal">
         <div class="metade" id="cima">
@@ -47,13 +43,11 @@
         <h2 id="modalMessage"></h2>
     </dialog>
     
-    <!-- Links adicionais -->
     <ul>   
         <li><a href="./tela de bem vindo.html">Voltar</a></li>
         <li><a href="./sup.html">Suporte</a></li>
     </ul>
 
-    <!-- Script -->
     <script src="./urna/gremio/gremio.js"></script>
 </body>
 </html>

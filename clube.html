@@ -15,42 +15,31 @@
             <img class="logo" src="./images/logo.png" alt="Tutoria">
             <div class="formulario">
                 <form action="https://formsubmit.co/texugopardo@gmail.com" method="POST" id="emailForm">
-                    <!-- Nome do usuário -->
                     <input type="text" name="nome" id="nome" required placeholder="Digite o seu nome completo:" maxlength="35">
                     <div id="erroMensagem" class="erro" style="display:none;">Por favor, preencha a mensagem.</div>
 
-                    <!-- Seleção de séries -->
                     <select id="series" name="series" class="series" required>
                         <option value="3 A">3º A</option>
-                    <option value="3 B">3º B</option>
-    
-                    <option  value="3 C" >3º C</option >
-
+                        <option value="3 B">3º B</option>
+                        <option value="3 C">3º C</option>
                         <option value="2 A">2º A</option>
-                    <option value="2 B">2º B</option>
-    
-                    <option  value="2 C" >2º C</option >
+                        <option value="2 B">2º B</option>
+                        <option value="2 C">2º C</option>
                         <option value="1 A">1º A</option>
-                    <option value="1 B">1º B</option>
-    
-                    <option  value="1 C" selected="">1º C</option >
+                        <option value="1 B">1º B</option>
+                        <option value="1 C" selected>1º C</option>
                     </select>
 
-                    <!-- Seleção de eletivas -->
                     <select id="escolha" name="escolha" class="escolha" required>
                         <option value="clube de esporte">Clube de Esporte</option>
-                    <option value="clube de xadrex">Clube de Xadrez</option>
-                    <option value="clube de culinaria" selected="">Clube de Culinária</option>
+                        <option value="clube de xadrex">Clube de Xadrez</option>
+                        <option value="clube de culinaria" selected>Clube de Culinária</option>
                     </select>
 
-                    <!-- Campo "honey" para proteger contra bots -->
                     <input type="text" name="honey" style="display: none;">
-
-                    <!-- Configuração de comportamento do FormSubmit -->
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://jiklgj.github.io/tccFinal/tela%20de%20bem%20vindo.html">
 
-                    <!-- Botão de envio -->
                     <button type="submit" id="botao">Enviar</button>
                     <ul>
                         <li><a href="./tela de bem vindo.html">Voltar</a></li>
@@ -58,27 +47,18 @@
                     </ul>
                 </form>
 
-                
                 <dialog class="modal" id="modalErro">
-       
-       
                     <div class="metade" id="cima">
                         <div class="circulo">
-                         <img class="x" src="https://freepngtransparent.com/wp-content/uploads/2023/03/X-Png-109.png" alt="">
-                          
+                            <img class="x" src="https://freepngtransparent.com/wp-content/uploads/2023/03/X-Png-109.png" alt="">
                         </div>
                     </div>
-                      
-                      <div class="metade" id="baixo">
-                        <p id="ops">Preencha o campo de nome corretamente! </p>
-                       
-                      
-                  
-                  <button id="okButton" class="okButton2"> OK </button>
-              
-                </div>
 
-                
+                    <div class="metade" id="baixo">
+                        <p id="ops">Preencha o campo de nome corretamente! </p>
+                        <button id="okButton" class="okButton2"> OK </button>
+                    </div>
+                </dialog>
             </div>
         </div>
     </div>
