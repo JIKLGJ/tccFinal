@@ -2,7 +2,7 @@
 
   
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDbQH9lRIEfYeXGA92QWVIkZ0No6-5xrio",
@@ -14,7 +14,7 @@ const firebaseConfig = {
   appId: "1:153920023241:web:35473099846372372ffb18"
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 
 const ra = document.querySelector("#number1");
@@ -31,7 +31,7 @@ var okButton = document.querySelector('#okButton');
 
 
 
-// Função POST corrigida (continua igual)
+
 async function POST() {
   const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/cadastro.json";
   
@@ -55,23 +55,23 @@ async function POST() {
     const data = await response.json();
     console.log(data);
 
-    // Mudar de tela após o envio dos dados
+  
     window.location.href = "./index.html";
   } catch (error) {
     console.error(error);
-    modal.showModal(); // Mostrar o modal se ocorrer um erro
+    modal.showModal();
   }
 }
 
 // Verificar se os campos estão preenchidos e se as credenciais estão corretas
 botao.addEventListener('click', () => {
   if (ra.value === '' || senha.value === '' || ra.value.length < 9 || senha.value.length < 6) {
-    modal.showModal(); // Mostrar modal se os campos estiverem vazios ou incorretos
+    modal.showModal();
   } else if (isNaN(ra.value)) {
-    modal.showModal(); // Mostrar modal se o RA não for numérico
+    modal.showModal();
   } else {
     modal2.showModal();
-    POST(); // Chamar função POST se os dados estiverem corretos
+    POST(); 
   }
 });
 
@@ -91,9 +91,9 @@ function mostrarSenha() {
 // Adicionar eventos ao carregar o documento
 document.addEventListener('DOMContentLoaded', () => {
   okButton.addEventListener('click', () => {
-    modal.close(); // Fechar o modal ao clicar em "OK"
+    modal.close(); 
   });
  
   
-  bntShowpass.addEventListener('click', mostrarSenha); // Adicionar evento para mostrar/ocultar senha
+  bntShowpass.addEventListener('click', mostrarSenha); 
 });
