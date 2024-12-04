@@ -11,7 +11,7 @@ const firebaseConfig = {
   appId: "1:153920023241:web:35473099846372372ffb18"
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
@@ -27,7 +27,7 @@ var okButton = document.querySelector('#okButton');
 
 // Função para obter o item por RA
 const getItemByRa = async (raValue) => {
-  const itemsRef = ref(db, 'cadastro'); // Refere-se à coleção 'cadastro'
+  const itemsRef = ref(db, 'cadastro'); 
   try {
       const snapshot = await get(itemsRef);
       if (snapshot.exists()) {
@@ -54,16 +54,16 @@ const getItemByRa = async (raValue) => {
 // Verificar se os campos estão preenchidos e se as credenciais estão corretas
 botao.addEventListener('click', async function () {
   if (ra.value === '' || senha.value === '' || ra.value.length < 9) {
-    modal.showModal(); // Mostrar modal se os campos estiverem vazios ou incorretos
+    modal.showModal(); 
   } else if (isNaN(ra.value)) {
-    modal.showModal(); // Mostrar modal se o RA não for numérico
+    modal.showModal(); 
   } else {
     const foundItem = await getItemByRa(ra.value);
     if (foundItem && foundItem.senha === senha.value && foundItem.digito===digito.value) {
-      // Credenciais corretas, redirecionar para outra página
+      
       window.location.href = "./tela de bem vindo.html";
     } else {
-      // Senha ou RA incorretos, mostrar modal de erro
+      
       modal.showModal();
     }
   }
