@@ -90,13 +90,13 @@ button:hover {
     border: none;
     border-radius: 10px;
     padding: 20px;
-    background-color: rgba(255, 0, 0, 0.8); /* Fundo vermelho com opacidade */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra suave */
-    color: white; /* Texto branco */
-    text-align: center; /* Alinha o conteúdo no centro */
-    width: 80%; /* Largura do modal */
-    max-width: 400px; /* Limita a largura máxima */
-    margin: 0 auto; /* Centraliza horizontalmente */
+    background-color: rgba(255, 0, 0, 0.8); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+    color: white; 
+    text-align: center; 
+    width: 80%; 
+    max-width: 400px; 
+    margin: 0 auto; 
 }
 
 .modal-content {
@@ -107,14 +107,14 @@ button:hover {
 }
 
 .modal-content h2 {
-    margin-bottom: 20px; /* Espaço entre o título e o botão */
+    margin-bottom: 20px; 
     font-size: 18px;
-    color: white; /* Texto do erro */
+    color: white; 
 }
 
 .erro {
-    background-color: #ff4d4d; /* Cor do botão de erro */
-    color: white; /* Texto branco */
+    background-color: #ff4d4d; 
+    color: white; 
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -124,48 +124,46 @@ button:hover {
 }
 
 .erro:hover {
-    background-color: #cc0000; /* Cor mais escura no hover */
-    transform: scale(1.05); /* Efeito de zoom */
-}
+    background-color: #cc0000; 
+    transform: scale(1.05); }
 
 a {
-    color: #ffffff; /* Cor do texto do link ao passar o mouse */
-    text-decoration: none; /* Remove o sublinhado padrão dos links */
-    display: inline-block; /* Permite aplicar padding e margin */
-    transition: 0.2s; /* Transição suave para propriedades alteradas */
+    color: #ffffff; 
+    text-decoration: none; 
+    display: inline-block; 
+    transition: 0.2s; 
     cursor: pointer;
     margin-top: 20px;
 }
 
 ul {
-    list-style-type: none; /* Remove os marcadores das listas */
-    padding: 0; /* Remove o padding padrão */
-    margin: 0; /* Remove a margem padrão */
-    text-align: center; /* Alinha o conteúdo da lista ao centro */
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+    text-align: center; 
 }
 
 ul li {
-    display: inline-block; /* Exibe itens da lista horizontalmente */
-    padding: 0 30px; /* Espaçamento horizontal ao redor dos itens */
-    font-size: 20px; /* Tamanho da fonte dos itens da lista */
+    display: inline-block; 
+    padding: 0 30px; 
+    font-size: 20px; 
 }
 
 a:hover {
-    color: #1dd1f1; /* Cor do texto dos links ao passar o mouse */
-    transform: scale(1.05); /* Aumenta o tamanho do link levemente */
-    transition: 0.2s; /* Transição suave para o efeito de transformação */
-}
+    color: #1dd1f1; 
+    transform: scale(1.05); 
+    transition: 0.2s; }
 .RA input {
         
                 
-    width: 95%; /* Define a largura do campo de entrada */
-    padding: 10px; /* Adiciona preenchimento interno */
-    margin-bottom: 17px; /* Adiciona margem inferior */
-    border: 2px solid #1148a8 ; /* Adiciona uma borda sólida */
-    border-radius: 5px; /* Adiciona bordas arredondadas */
-    box-sizing: border-box; /* Inclui o preenchimento e a borda na largura total */
-    transition: 0.3s; /* Adiciona uma transição suave */
-    margin-top: 20px; /* Adiciona margem superior */
+    width: 95%; 
+    padding: 10px; 
+    margin-bottom: 17px; 
+    border: 2px solid #1148a8 ; 
+    border-radius: 5px; 
+    box-sizing: border-box; 
+    transition: 0.3s; 
+    margin-top: 20px; 
     border-radius: 15px;
     margin-left: 4%;
   
