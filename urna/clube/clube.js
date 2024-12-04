@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
 
-// Configuração Firebase
+
 const firebaseConfig = {
     apiKey: "AIzaSyDbQH9lRIEfYeXGA92QWVIkZ0No6-5xrio",
     authDomain: "urna-ec7a7.firebaseapp.com",
@@ -11,17 +11,16 @@ const firebaseConfig = {
     appId: "1:153920023241:web:35473099846372372ffb18"
 };
 
-// Inicializar Firebase
+
 const app = initializeApp(firebaseConfig);
 
-// Seleção de elementos
 const nomeInput = document.querySelector("#nome");
 const botao = document.querySelector("#botao");
 const modalErro = document.querySelector("#modalErro");
 const okButton = document.querySelector("#okButton");
 const emailForm = document.querySelector("#emailForm");
 
-// Impedir a inserção de números no campo de nome
+
 nomeInput.addEventListener("keypress", (e) => {
     const keyCode = e.keyCode || e.which;
     if (keyCode >= 48 && keyCode <= 57) {
@@ -29,7 +28,7 @@ nomeInput.addEventListener("keypress", (e) => {
     }
 });
 
-// Função para exibir modal de erro
+
 function exibirModalErro(mensagem) {
     const opsText = document.querySelector("#ops");
     if (opsText) {
@@ -38,11 +37,11 @@ function exibirModalErro(mensagem) {
     if (modalErro) {
         modalErro.showModal();
     } else {
-        alert(mensagem); // Fallback caso o modal não exista
+        alert(mensagem); 
     }
 }
 
-// Função POST para enviar ao Firebase
+
 async function POST(nomeSanitizado) {
     const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/clube/.json";
 
@@ -65,7 +64,7 @@ async function POST(nomeSanitizado) {
     }
 }
 
-// Função para verificar se o nome já existe na coleção 'eletiva'
+
 async function verificarNomeExistente(nome) {
     const nomeSanitizado = nome.trim();
     const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/clube.json";
@@ -86,11 +85,10 @@ async function verificarNomeExistente(nome) {
         return false;
     } catch (error) {
         console.error("Erro ao verificar nome:", error.message);
-        return false; // Considera que o nome não existe em caso de erro
+        return false; 
     }
 }
 
-// Validação e envio
 botao.addEventListener("click", async (event) => {
     event.preventDefault();
 
@@ -117,7 +115,7 @@ botao.addEventListener("click", async (event) => {
     }
 });
 
-// Fechar o modal de erro
+
 okButton.addEventListener("click", () => {
     if (modalErro) {
         modalErro.close();
