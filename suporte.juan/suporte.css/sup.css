@@ -6,7 +6,7 @@ body{    background: linear-gradient(90deg, rgba(15,12,41,1) 0%, rgba(48,43,99,1
     padding: 0px;
 }
 
-body,              /* deixa todo o site com a mesma fonte que no caso é a san serif*/
+body,             
 textarea{
     font-family: sans-serif;
 }
@@ -18,7 +18,7 @@ textarea{
     height: 100vh;
     
 }
-.card{   /* aqui esta pesonalizando onde as pessoas possam escrever no seu formulário */
+.card{  
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -31,7 +31,7 @@ textarea{
 }
 
 
- .formulario{ /* nessa parte está ajustando o formulário dentro da caixa  para que o elementos se ajustem bem */
+ .formulario{ 
     display: flex;
     align-items: start;
     flex-wrap: wrap;
@@ -51,7 +51,7 @@ h2{
     color: #fff;
 }
 
-textarea{ /*serve para regular a altura do formulario de comentario */
+textarea{ 
     width: 589px;
     height: 222px;
     padding: 16px;
