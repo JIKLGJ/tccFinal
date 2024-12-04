@@ -13,7 +13,7 @@ body{
       font-size:10px;
       color: #ffffff; 
       font-weight: bold; 
-      font-family: Arial, sans-serif; /* define a fonte */
+      font-family: Arial, sans-serif; 
       margin-left:255px; 
   }
   #Esqueceu{
@@ -21,20 +21,20 @@ body{
           color: #ffffff;     
           margin-top: auto;
           font-weight: bold; 
-          font-family: Arial, sans-serif; /* define a fonte */
+          font-family: Arial, sans-serif; 
           margin-left:220px; 
       }
 
   .botao  {
           
-              width: 10%; /* Define a largura como 100%*/
+              width: 10%; 
               height: 40px;
-              padding: 10px; /* Adiciona preenchimento */
-              background-color: #1148a8 ; /* Define a cor de fundo */
-              color: #fdfdfd; /* Define a cor do texto */
-              border: none; /* Remove a borda */
-              border-radius: 90px; /* Adiciona bordas arredondadas */
-              cursor: pointer; /* Define o cursor como ponteiro */
+              padding: 10px;
+              background-color: #1148a8 ; 
+              color: #fdfdfd; 
+              border: none; 
+              border-radius: 90px; 
+              cursor: pointer; 
                margin-right: 80%;
                margin-left:180px;
               margin-top: -10px;
@@ -45,14 +45,14 @@ body{
           .RA input {
       
               
-              width: 15%; /* Define a largura do campo de entrada */
-              padding: 15px; /* Adiciona preenchimento interno */
-              margin-bottom: 20px; /* Adiciona margem inferior */
-              border: 2px solid #1148a8 ; /* Adiciona uma borda sólida */
-              border-radius: 5px; /* Adiciona bordas arredondadas */
-              box-sizing: border-box; /* Inclui o preenchimento e a borda na largura total */
-              transition: 0.3s; /* Adiciona uma transição suave */
-              margin-top: 35px; /* Adiciona margem superior */
+              width: 15%; 
+              padding: 15px; 
+              margin-bottom: 20px; 
+              border: 2px solid #1148a8 ; 
+              border-radius: 5px; 
+              box-sizing: border-box; 
+              transition: 0.3s; 
+              margin-top: 35px; 
               border-radius: 15px;
               margin-left: 7%;
           
@@ -72,14 +72,14 @@ font-size: 12px;
       
           
           
-              width: 15%; /* Define a largura do campo de entrada */
-              padding: 15px; /* Adiciona preenchimento interno */
-              margin-bottom: 20px; /* Adiciona margem inferior */
-              border: 2px solid #1148a8 ; /* Adiciona uma borda sólida */
-              border-radius: 5px; /* Adiciona bordas arredondadas */
-              box-sizing: border-box; /* Inclui o preenchimento e a borda na largura total */
+              width: 15%; 
+              padding: 15px; 
+              margin-bottom: 20px; 
+              border: 2px solid #1148a8 ; 
+              border-radius: 5px; 
+              box-sizing: border-box; 
           
-              margin-top: auto; /* Adiciona margem superior */
+              margin-top: auto; 
               border-radius: 15px;
               margin-left: 7%;
           
@@ -91,10 +91,10 @@ font-size: 12px;
   color: #8a66dd;
   width: 50px;
   height: 49px;
-  border: 2px solid #1148a8 ; /* Adiciona uma borda sólida */
+  border: 2px solid #1148a8 ; 
   border-radius: 15px;
-  transition: 0.3s; /* Adiciona uma transição suave */
-  cursor: pointer; /* Define o cursor como ponteiro */
+  transition: 0.3s;
+  cursor: pointer; 
 }
 
   i{
@@ -102,11 +102,11 @@ font-size: 12px;
       position: relative;
       right: 40px;
       opacity: 0.3;
-      cursor: pointer; /* Define o cursor como ponteiro */
+      cursor: pointer; 
   }
   
       ::placeholder {
-          color:#8a66dd; /* Mudar para a cor desejada */
+          color:#8a66dd; 
       }
   
   
@@ -239,14 +239,14 @@ font-size: 12px;
         } 
 
  .links button {
-  width: 10%; /* Define a largura como 100%*/
+  width: 10%; 
   height: 40px;
-  padding: 10px; /* Adiciona preenchimento */
-  background-color: #1148a8 ; /* Define a cor de fundo */
-  color: #fdfdfd; /* Define a cor do texto */
-  border: none; /* Remove a borda */
-  border-radius: 90px; /* Adiciona bordas arredondadas */
-  cursor: pointer; /* Define o cursor como ponteiro */
+  padding: 10px; 
+  background-color: #1148a8 ;
+  color: #fdfdfd; 
+  border: none; 
+  border-radius: 90px; 
+  cursor: pointer;
    margin-right: 80%;
    margin-left:-75px;
   margin-top: 8px;
@@ -255,14 +255,14 @@ font-size: 12px;
 
 #Cadastro {
 
-  width: 10%; /* Define a largura como 100%*/
+  width: 10%; 
   height: 40px;
-  padding: 10px; /* Adiciona preenchimento */
-  background-color: #1148a8 ; /* Define a cor de fundo */
-  color: #fdfdfd; /* Define a cor do texto */
-  border: none; /* Remove a borda */
-  border-radius: 90px; /* Adiciona bordas arredondadas */
-  cursor: pointer; /* Define o cursor como ponteiro */
+  padding: 10px; 
+  background-color: #1148a8 ;
+  color: #fdfdfd;
+  border: none; 
+  border-radius: 90px; 
+  cursor: pointer; 
    margin-right: 40px;
    margin-left: -75px;
   margin-top: 10px;
@@ -297,7 +297,7 @@ font-size: 12px;
               }
               .botao  {
           
-                  width: 22%; /* Define a largura como 100%*/
+                  width: 22%; 
                   margin-left: 37%;
                   
               }
@@ -365,7 +365,7 @@ font-size: 12px;
                 }
                 .botao  {
             
-                    width: 32%; /* Define a largura como 100%*/
+                    width: 32%; 
                     margin-left: 37%;
                     
                 }
@@ -535,6 +535,5 @@ font-size: 12px;
   }
 
 
-  /*AQUI ACABA O MEDIA QUERY*/
-
+ 
 
