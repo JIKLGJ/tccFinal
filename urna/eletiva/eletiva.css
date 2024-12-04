@@ -98,33 +98,33 @@ h2 {
 
 a {
    
-    color: #ffffff; /* Cor do texto do link ao passar o mouse */
-  text-decoration: none; /* Remove o sublinhado padrão dos links */
-  display: inline-block; /* Permite aplicar padding e margin */
-  transition: .2s; /* Transição suave para propriedades alteradas */
+    color: #ffffff; 
+  text-decoration: none; 
+  display: inline-block; 
+  transition: .2s; 
   margin: 0 auto;
     display: block;
     margin-right: 20px;
 cursor: pointer;
 }
  ul li {
-    display: inline-block; /* Exibe itens da lista horizontalmente */
-    padding: 0 30px; /* Espaçamento horizontal ao redor dos itens */
-    text-align: center; /* Alinhamento centralizado do texto nos itens da lista */
+    display: inline-block; 
+    padding: 0 30px; 
+    text-align: center; 
     font-size: 20px;
   }
 
 
   
-  /* Estilo para links no cabeçalho ao passar o mouse sobre eles */
+ 
    a:hover {
-    color: #1dd1f1; /* Cor do texto dos links */
-    transform: scale(1.05); /* Aumenta o tamanho do link levemente */
+    color: #1dd1f1; 
+    transform: scale(1.05); 
   }
   
-  /* Estilo para listas de navegação dentro do cabeçalho */
+
  ul {
-    list-style-type: none; /* Remove os marcadores das listas */
+    list-style-type: none; 
   }
 .okButton, .okButton2 {
     background-color: #573b8a;
