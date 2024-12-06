@@ -17,6 +17,7 @@ body{
       margin-left:255px; 
   }
   #Esqueceu{
+          
           font-size:12px; 
           color: #ffffff;     
           margin-top: auto;
@@ -139,7 +140,7 @@ font-size: 12px;
       width: 1250PX;
       margin-left:590px;
       border-radius: 45px;
-      margin-top: -650px;
+      margin-top: -750px;
       }
       .Esqueceu{
      margin-left: 225px;
@@ -241,7 +242,7 @@ font-size: 12px;
  .links button {
   width: 10%; 
   height: 40px;
-  padding: 10px; 
+  padding: 15px; 
   background-color: #1148a8 ;
   color: #fdfdfd; 
   border: none; 
@@ -251,6 +252,9 @@ font-size: 12px;
    margin-left:-75px;
   margin-top: 8px;
 
+}
+.links{
+  padding: 10px;
 }
 
 #Cadastro {
