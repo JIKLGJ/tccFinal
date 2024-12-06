@@ -188,7 +188,7 @@ section.especialidades .flex {
 
 
 
-@media (min-width: 340px)  { 
+@media (max-width: 500px)  { 
  
   .flex{
    flex-direction: column-reverse;

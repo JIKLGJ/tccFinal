@@ -87,7 +87,7 @@ button:hover{
     
  }
 
-@media (min-width:340px){
+@media (max-width:500px){
     
 h2{
 
