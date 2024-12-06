@@ -269,7 +269,7 @@ font-size: 12px;
 }
 
       
- @media (max-width:340px)  {    
+ @media (min-width:340px){    
   
   
 
