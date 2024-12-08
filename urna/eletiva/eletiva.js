@@ -37,7 +37,7 @@ function exibirModalErro(mensagem) {
     if (modalErro) {
         modalErro.showModal();
     } else {
-        alert(mensagem);
+        alert(mensagem); 
     }
 }
 
@@ -55,14 +55,14 @@ async function POST(nomeSanitizado) {
         });
 
         if (!response.ok) {
-            throw new Error(`Erro ao enviar dados: ${response.status}`);
+            exibirModalErro(mensagem) ;
         }
 
-        console.log("Enviado ao Firebase:", await response.json());
     } catch (error) {
-        console.error("Erro ao enviar ao Firebase:", error);
+        exibirModalErro(mensagem) ;
     }
 }
+
 
 async function verificarNomeExistente(nome) {
     const nomeSanitizado = nome.trim();
@@ -72,7 +72,7 @@ async function verificarNomeExistente(nome) {
         const response = await fetch(url);
 
         if (!response.ok) {
-            throw new Error(`Erro na requisição: ${response.status}`);
+            exibirModalErro(mensagem)
         }
 
         const data = await response.json();
@@ -83,7 +83,7 @@ async function verificarNomeExistente(nome) {
 
         return false;
     } catch (error) {
-        console.error("Erro ao verificar nome:", error.message);
+      
         return false; 
     }
 }
@@ -102,14 +102,15 @@ botao.addEventListener("click", async (event) => {
         const nomeExistente = await verificarNomeExistente(nomeSanitizado);
 
         if (nomeExistente) {
-            exibirModalErro("Não é possível enviar uma nova escolha!");
+            exibirModalErro(" Não é possível enviar uma nova escolha!");
             return;
         }
 
         await POST(nomeSanitizado);
         emailForm.submit();
+        alert('Sua escolha foi enviada!')
     } catch (error) {
-        console.error("Erro durante validação ou envio:", error);
+        
         exibirModalErro("Ocorreu um erro. Tente novamente mais tarde.");
     }
 });
