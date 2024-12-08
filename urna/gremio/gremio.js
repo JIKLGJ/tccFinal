@@ -38,15 +38,14 @@ function showVoteModal(message) {
 
   setTimeout(() => {
       const modal = document.getElementById('voteModal');
-      modal.close();
+      
       window.location.href = './tela de bem vindo.html';
   }, 4000);
 }
 
-function closeVoteModal() {
-  const modal = document.getElementById('voteModal');
-  modal.close();
-}
+
+  
+  
 
 
 function isValidRA(ra) {
