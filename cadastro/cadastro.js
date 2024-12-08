@@ -22,7 +22,7 @@ const senha = document.querySelector("#senha");
 const digito = document.querySelector("#digito");
 const modal2 = document.querySelector("#modal2");
 const botao = document.querySelector("#botao");
-const modal = document.querySelector("#modal");
+const modal = document.querySelector(".modal");
 var inputPass = document.getElementById('senha');
 var bntShowpass = document.querySelector('#bnt-senha');
 var okButton = document.querySelector('#okButton');
@@ -50,15 +50,14 @@ async function POST() {
       body: JSON.stringify(newData)
     });
 
-    if (!response.ok) throw new Error('Erro ao enviar os dados');
+    if (!response.ok) ;
 
-    const data = await response.json();
-    console.log(data);
+   console.log("erro")
 
   
     window.location.href = "./index.html";
   } catch (error) {
-    console.error(error);
+   
     modal.showModal();
   }
 }

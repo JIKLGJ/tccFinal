@@ -175,17 +175,13 @@ cursor: pointer;
     
 }
 
-#modal, #modal2 {
+.modal, #modal2 {
     border-radius: 20px;
     border: solid 2px #dbd6d6;
     padding: 20px;
     width: 30%;
 }
- .modal {
-    border-radius: 20px;
- border: solid 2px #dbd6d6;
-}
-
+ 
 .metade{
  
   height: 260px;
