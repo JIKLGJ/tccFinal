@@ -46,7 +46,7 @@ const getItemByRa = async (raValue) => {
           return null; // Caso não encontre nada
       }
   } catch (error) {
-      console.error('Erro ao obter documentos: ', error);
+    modal.showModal();
       return null;
   }
 };
