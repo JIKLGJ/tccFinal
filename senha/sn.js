@@ -64,14 +64,14 @@ const updateItemByRa = async (ra, data) => {
     if (foundDoc) {
       // Atualiza o documento encontrado com os novos dados
       await update(ref(db, `cadastro/${foundDoc.key}`), data);
-      console.log('Documento atualizado com sucesso!');
+
       return { success: true }; // Retorna sucesso se a atualização for bem-sucedida
     } else {
-      console.log('Nenhum documento encontrado com o RA:', ra);
+     
       return { success: false }; // Retorna erro se o RA não for encontrado
     }
   } catch (error) {
-    console.error('Erro ao atualizar documento: ', error);
+   
     return { success: false }; // Retorna erro se ocorrer algum erro na requisição
   }
 };
