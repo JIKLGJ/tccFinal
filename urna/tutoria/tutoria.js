@@ -14,84 +14,86 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-
 const nomeInput = document.querySelector("#nome");
 const botao = document.querySelector("#botao");
 const modalErro = document.querySelector("#modalErro");
 const okButton = document.querySelector("#okButton");
 const emailForm = document.querySelector("#emailForm");
 
-nomeInput.addEventListener("keypress", function(e) {
-  const keyCode = (e.keyCode ? e.keyCode : e.which);
-  if (keyCode > 47 && keyCode < 58) {
-    e.preventDefault();
-  }
+
+nomeInput.addEventListener("keypress", (e) => {
+    const keyCode = e.keyCode || e.which;
+    if (keyCode >= 48 && keyCode <= 57) {
+        e.preventDefault();
+    }
 });
+
 
 function exibirModalErro(mensagem) {
     const opsText = document.querySelector("#ops");
-    opsText.textContent = mensagem;
-    modalErro.showModal();
-}
-
-async function POST(nomeSanitizado) {
-    const url = `https://urna-ec7a7-default-rtdb.firebaseio.com/tutoria/.json`;
-
-    const newData = {
-        nome: nomeSanitizado,
-    };
-
-    try {
-        const response = await fetch(url, {
-            method: "POST", 
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newData),
-        });
-
-        const data = await response.json();
-        console.log("Enviado ao Firebase:", data);
-    } catch (error) {
-        console.error("Erro ao enviar ao Firebase:", error);
+    if (opsText) {
+        opsText.textContent = mensagem;
+    }
+    if (modalErro) {
+        modalErro.showModal();
+    } else {
+        alert(mensagem); 
     }
 }
 
+
+async function POST(nomeSanitizado) {
+    const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/tutoria/.json";
+
+    const newData = { nome: nomeSanitizado };
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newData),
+        });
+
+        if (!response.ok) {
+            exibirModalErro(mensagem) ;
+        }
+
+    } catch (error) {
+        exibirModalErro(mensagem) ;
+    }
+}
+
+
 async function verificarNomeExistente(nome) {
     const nomeSanitizado = nome.trim();
-    const url = `https://urna-ec7a7-default-rtdb.firebaseio.com/tutoria.json`; 
+    const url = "https://urna-ec7a7-default-rtdb.firebaseio.com/tutoria.json";
 
     try {
         const response = await fetch(url);
 
         if (!response.ok) {
-            throw new Error(`Erro na requisição: ${response.status}`);
+            exibirModalErro(mensagem)
         }
 
         const data = await response.json();
 
-       
         if (data) {
-            for (const key in data) {
-                if (data[key].nome === nomeSanitizado) {
-                    return true; 
-                }
-            }
+            return Object.values(data).some((entry) => entry.nome === nomeSanitizado);
         }
 
-        return false; 
+        return false;
     } catch (error) {
-        console.error("Erro ao verificar nome na coleção 'tutoria':", error.message);
+      
         return false; 
     }
 }
 
-
 botao.addEventListener("click", async (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
 
     const nomeSanitizado = nomeInput.value.trim();
-    if (nomeSanitizado === "" || nomeSanitizado.length < 9) {
+
+    if (!nomeSanitizado || nomeSanitizado.length < 9) {
         exibirModalErro("Digite seu nome corretamente!");
         return;
     }
@@ -100,19 +102,22 @@ botao.addEventListener("click", async (event) => {
         const nomeExistente = await verificarNomeExistente(nomeSanitizado);
 
         if (nomeExistente) {
-            exibirModalErro("Não é possível enviar uma nova escolha!");
+            exibirModalErro(" Não é possível enviar uma nova escolha!");
             return;
         }
 
         await POST(nomeSanitizado);
-
-       
         emailForm.submit();
+        alert('Sua escolha foi enviada!')
     } catch (error) {
-        console.error("Erro durante validação ou envio:", error);
+        
         exibirModalErro("Ocorreu um erro. Tente novamente mais tarde.");
     }
 });
 
 
-okButton.addEventListener("click", () => modalErro.close());
+okButton.addEventListener("click", () => {
+    if (modalErro) {
+        modalErro.close();
+    }
+});
