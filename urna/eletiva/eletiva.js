@@ -27,7 +27,12 @@ nomeInput.addEventListener("keypress", (e) => {
         e.preventDefault();
     }
 });
-
+nomeInput.addEventListener('paste', (event) => {
+    
+    event.preventDefault();
+    
+    
+});
 
 function exibirModalErro(mensagem) {
     const opsText = document.querySelector("#ops");
